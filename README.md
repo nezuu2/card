@@ -1,2 +1,2 @@
 # card
-Link of website: https://nezuu.github.io/card/
+Link of website: https://nezuu2.github.io/card/
