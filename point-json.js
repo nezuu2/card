@@ -1,1 +1,1 @@
-data = '[{"name" : "nezuu","point" : "1"},{"name" : "iemike", "point" : "10"},{"name" : "naba", "point" : "10"}]';
+data = '[{"name" : "nezuu","point" : "1"},{"name" : "iemike", "point" : "10"},{"name" : "naba", "point" : "10"},{"name" : "dragonk", "point" : "5"},{"name" : "sabatora", "point" : "5"}]';
