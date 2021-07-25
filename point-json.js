@@ -1,0 +1,1 @@
+data = '[{"name" : "nezuu","point" : "1"},{"name" : "iemike", "point" : "10"},{"name" : "naba", "point" : "10"}]';

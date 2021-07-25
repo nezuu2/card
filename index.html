@@ -17,8 +17,11 @@
         <div class="card py-5 text-center container" style="background-image: url( icon.png );background-position: 10% 58%;background-size: 30%;background-repeat: no-repeat;background-attachment: scroll;");>
             <h1>NeCard</h1>
             <p>NePoint <a id="point">Null</a></p>
-            <script>
-            </script>
+              <div class="input-group mb-3 inputGroup-sizing-sm">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" id="inputForm" placeholder="Username" onkeyup="nameCheck()" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
         </div>
 
         <div class="text-center container">
@@ -26,7 +29,7 @@
           <h3>サイト準備中・・・</h3>
           <p>準備が完了次第ご利用いただけますので、後日お越しください。</p>
           <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 30%">30%</div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%">50%</div>
           </div>
       </div>
         
@@ -202,17 +205,29 @@
     </div>
       <!--jQuery JS-->
       <link ref="script" href="Library/jquery-3.6.0.min.js">
-
+      <!-- point.json -->
+      <script type="text/javascript" src="point-json.js"></script>
       <script>
-        $.getJSON("https://nezuu2.github.io/card/index.html", (data) => {
-          // JSONのデータを取得
-          // text = localStorage.getItem("point");
-          // obj = JSON.parse(text);
-          // document.getElementById("point").innerHTML = obj.point;
-          document.getElementById("point").innerHTML = data.point;
-        });
+        var mydata = JSON.parse(data);
+        document.getElementById("point").innerHTML = mydata[0].point;
+
+        // mydataの[1]にappleという文字列を代入している
+        // mydata[1] = "apple";
+        // mydataをjsonのデータにしている
+        // (あとはサーバーに送って上書き保存するだけ)
+        // var jsonData = JSON.stringify(mydata);
+        function nameCheck() {
+          var inputValue = document.getElementById( "inputForm" ).value;
+          for (let i = 0; i < mydata.length; i++) {
+            const element = mydata[i];
+            if(mydata[i].name == inputValue){
+              document.getElementById( "point" ).innerHTML = mydata[i].point;
+              alert("規定のアカウント名を認識しました! Pointを反映します。");
+            }
+          }
+        }
         function comingsoon() {
-          alert("🚧現在この機能は開発中のためご利用いただけません。");
+            alert("🚧現在この機能は開発中のためご利用いただけません。");
         }
       </script>
 </body>
